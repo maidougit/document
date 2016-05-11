@@ -1,2 +1,2 @@
 # mime
-这是创建的丢一个github文件
+这是创建的第一个github文件
