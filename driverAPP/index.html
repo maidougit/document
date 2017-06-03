@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="320"/>
+<title>HUI </title>
+<link rel="stylesheet" type="text/css" href="hui/css/hui.css" />
+<link rel="stylesheet" type="text/css" href="source/css/style.css" />
+</head>
+<body>
+<header class="hui-header">
+	<div id="hui-back"></div>
+	<h1>确认资料</h1>
+</header>
+<div class="hui-wrap">
+	<div class="tipsBar"><span class="hui-icons hui-icons-warn"></span>请补全/确认资料</div>
+	<div class="emilyCon marT10">
+		<div class="flexBox">    		
+			<div class="step finish hui-text-center">
+				<span>1</span>
+				<p class="marT10">填写资料</p>		
+			</div>
+			<div class="stepLine finish"></div>	
+			<div class="step hui-text-center">
+				<span>2</span>
+				<p class="marT10">后台审核</p>		
+			</div>
+			<div class="stepLine"></div>
+			<div class="step hui-text-center">
+				<span>3</span>
+				<p class="marT10">开通成功</p>
+			</div>
+		</div>
+	</div>
+		
+	<form id="myForm" class="formInfo">
+		<div class="titleH3">司机信息</div>
+		<div class="emilyCon" style="padding: 0 10px;">
+			<div class="hui-form-items flexBox just2" style="display: none;">
+	            <label>司机ID</label>
+	            <input type="hidden" class="hui-input hui-input-clear" id="driverID" value="" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>姓名</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drName" value="DDNJ" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>手机号码</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drPhone" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>身份证号码</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drID" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>驾照类型</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drLecense" placeholder="驾照类型" checkType="string" checkData="1," checkMsg="请选择驾照类型" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>初次领证日期</label>
+	            <input type="date" class="hui-input hui-input-clear" id="dataLec0" placeholder="初次领证日期" checkType="string" checkData="1," checkMsg="请输入初次领证日期" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>驾照有效期起</label>
+	            <input type="date" class="hui-input hui-input-clear" id="dataLec1" placeholder="驾照有效期起" checkType="string" checkData="1," checkMsg="请输入驾照起始日期" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>驾照有效期止</label>
+	            <input type="date" class="hui-input hui-input-clear" id="dataLec2" placeholder="驾照有效期止" checkType="string" checkData="1," checkMsg="请输入驾照截止日期" />
+	        </div>
+	    </div>
+	    
+	    <div class="titleH3">银行卡信息</div>
+	    <div class="emilyCon" style="padding: 0 10px;">  
+	    	<div class="hui-form-items flexBox just2">
+	            <label>银行卡号</label>
+	            <input type="text" class="hui-input hui-input-clear" id="bankCard" placeholder="银行卡号" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>开户行</label>
+	            <input type="text" class="hui-input hui-input-clear" id="bank" placeholder="开户行" checkType="reg" checkData="^[\u4e00-\u9fa5]{2,15}$" checkMsg="开户行为中文" />
+	        </div>
+	    </div>
+	    
+	    <div class="titleH3">车辆信息</div>
+	    <div class="emilyCon" style="padding: 0 10px;"> 
+	    	<div class="hui-form-items flexBox just2">
+	            <label>车牌号</label>
+	            <input type="text" class="hui-input hui-input-clear" id="carID" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>行驶证编号</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drLecense1" placeholder="行驶证编号"  checkType="reg" checkData="^\d{10,14}$" checkMsg="行驶证编号为10-14位数字" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>行驶证有效期</label>
+	            <input type="date" class="hui-input hui-input-clear" id="drLecDate" placeholder="行驶证有效期"  checkType="string" checkData="1," checkMsg="请输入行驶证有效期" />
+	        </div>
+	    </div>   
+	        
+	    <div class="titleH3">上传证件</div>
+	    <div class="emilyCon" style="padding: 0 10px;"> 	
+	        <!--<input type="file" name="pic" id="pic" accept="image/*" class="upload-input" />-->
+	        <input type="hidden" id="ckjl.id" name="ckjl.id" value="429">
+	        <div class="imgConBox" id="upload1">
+	        	<img src="source/image/upIMG1.jpg" class="dftIMG" id="dft_IMG1">
+	        </div>
+	        <div class="imgConBox" id="upload2">
+	        	<img src="source/image/upIMG2.jpg" class="dftIMG" id="dft_IMG2">
+	        </div>
+	        <div class="imgConBox" id="upload3">
+	        	<img src="source/image/upIMG3.jpg" class="dftIMG" id="dft_IMG3">
+	        </div>
+	        <div class="imgConBox" id="upload4">
+	        	<img src="source/image/upIMG4.jpg" class="dftIMG" id="dft_IMG4">
+	        </div>
+	        <!--隐藏-->
+	        <div class="imgConBox hide" id="upload5">
+	        	<img src="source/image/upIMG4.jpg" class="dftIMG" id="dft_IMG5">
+	        </div>
+	        <div class="imgConBox hide" id="upload6">
+	        	<img src="source/image/upIMG4.jpg" class="dftIMG" id="dft_IMG6">
+	        </div>
+	        
+	        <div class="hui-form-items">
+	        	<button type="button" class="hui-button hui-button-large btnBlue" id="submitBtn">提交</button>
+	        </div>
+	    </div>
+	</form>
+	
+</div>
+<script type="text/javascript" src="hui/js/hui.js" charset="utf-8"></script>
+<script type="text/javascript" src="source/js/jquery-1.10.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="hui/js/hui-picker.js" charset="utf-8"></script>
+<script type="text/javascript" src="hui/js/hui-form.js" charset="utf-8"></script>
+<!--<script type="text/javascript" src="source/js/common.js" charset="utf-8"></script>  
+<script type="text/javascript" src="source/js/utitls.js" charset="utf-8"></script> -->
+<script type="text/javascript">
+var driverID = "12345";
+hui.ajax({
+    url : 'source/data/loadInfo.as',
+    backType:"JSON",
+    data:{
+    	//driverId: "12345"
+    },
+    success : function(data){
+    	//hui.upToast(msg);
+    	if(data.success){
+    		var data=data.result[0];
+    		//alert(data.drName)
+    		hui("#drName").val(data.drName);
+    		hui("#drPhone").val(cutStr(data.drPhone ,3 ,2));
+    		hui("#drID").val(cutStr(data.drID ,4 ,2));
+    		hui("#drLecense").val(data.drLecType);
+    		hui("#dataLec0").val(data.drLecFirst);
+    		hui("#dataLec1").val(data.drLecStart);
+    		hui("#dataLec2").val(data.drLecEnd);
+    		
+    		hui("#bankCard").val(cutStr(data.bankCard ,4 ,4));
+    		hui("#bank").val(data.bank);
+    		
+    		hui("#carID").val(data.carID);
+    		hui("#drLecense1").val(data.drLecense1);
+    		hui("#drLecDate").val(data.drLecDate);
+    		
+            if(data.idCardFace != ""){
+            	hui("#dft_IMG1").attr("src",data.idCardFace);
+            }
+            if(data.idCardBack != ""){
+            	hui("#dft_IMG2").attr("src",data.idCardBack);
+            }
+            if(data.drLecImg != ""){
+            	hui("#dft_IMG3").attr("src",data.drLecImg);
+            }
+            if(data.certificate1 != ""){
+            	hui("#dft_IMG4").attr("src",data.certificate1);
+            }
+            if(data.certificate2 != ""){
+            	hui("#upload5").removeClass("hide");
+            	hui("#dft_IMG5").attr("src",data.certificate2);
+            }
+            if(data.certificate3 != ""){
+            	hui("#upload6").removeClass("hide");
+            	hui("#dft_IMG6").attr("src",data.certificate3);
+            }
+
+    	}
+    },
+    error : function(e){
+        console.log(JSON.stringify(e));
+        hui.iconToast('读取消息失败', 'warn');
+    }
+});
+(function ($, doc ,$$){
+	//初始化页面执行操作  
+	hui.formInit();
+    function plusReady() {  
+        //Android返回键监听事件  
+        plus.key.addEventListener('backbutton',function(){  
+            myclose();  
+        },false);  
+    }  
+    if (window.plus) {  
+        plusReady();  
+    } else {  
+        document.addEventListener('plusready', plusReady, false);  
+    }
+       
+    $(".dftIMG").click(function(){
+    	showActionSheet(this);
+    })
+    
+    //车型车长  ----字段已删除
+    /*var picker1 = new huiPicker('#carTL', function(){
+	    var carType = picker1.getVal(0);
+	    var carLen  = picker1.getVal(1);
+	    $('#carTL').val(carType + ' ' + carLen);
+	});
+	picker1.level = 2;
+	var carTypeArr = [];
+	var str1 = "厢式车,平板车,高栏车,中栏车,低栏车,半封闭车,罐装车,冷藏车,集装车,自卸车,危险品车,挂车,其他"; 
+    var arr1 = str1.split(",");
+    for(var i = 0; i < arr1.length; i++){carTypeArr.push({value:arr1[i], text:arr1[i]});}
+    picker1.bindData(0, carTypeArr);
+    
+    var carLenArr = []; 
+    var str2 = "17.5米,16.5米,15米,13米,9.6米,8.6米,7.6米,6.8米,4.2米";
+    var arr2 = str2.split(",");
+    for(var i = 0; i < arr2.length; i++){carLenArr.push({value:arr2[i], text:arr2[i]});}
+    picker1.bindData(1, carLenArr);*/
+    
+    //驾照类型
+    var picker2 = new huiPicker('#drLecense', function(){
+	    var drLec = picker2.getVal(0);
+	    $('#drLecense').val(drLec);
+	});
+	picker2.level = 1;
+	
+	var drLecArr = [];
+    var str3 = "A1,A2,A3,B1,B2,C1,C2,C3,C4,D,E,F,M,N,P";
+    var arr3 = str3.split(",");
+    for(var i = 0; i < arr3.length; i++){drLecArr.push({value:arr3[i], text:arr3[i]});}
+    picker2.bindData(0, drLecArr);
+    
+    //验证并提交
+	$('#submitBtn').click(function(){
+	    //验证
+	    var res = huiFormCheck('#myForm');
+	    console.log(res);
+
+	    //提交
+	    if(res){
+	    	alert('验证通过！');
+	    	uploadimge();//提交
+	    }
+	});
+    
+    
+        //加载页面初始化需要加载的图片信息
+        //或者相册IMG_20160704_112620.jpg  
+        //imgId:图片名称：1467602809090或者IMG_20160704_112620  
+        //imgkey:字段例如：F_ZDDZZ  
+        //ID：站点编号ID,例如429  
+        //src：src="file:///storage/emulated/0/Android/data/io.dcloud.HBuilder/.HBuilder/apps/HBuilder/doc/upload/F_ZDDZZ-1467602809090.jpg"  
+	    var index=0;
+	    var imageArray = new Array();
+	    function showImgDetail (imgId,imgkey,id,src) {
+	        	//alert(src+" / "+imgId+" / "+imgkey);
+	            var html = "";  
+	            html +='<div id="Img'+imgId+imgkey+'" class="image-item">';   
+	            html +='    <img id="picBig" data-preview-src="" data-preview-group="1" '+src+'/>';  
+	            html +='    <span class="del" onclick="delImg(\''+imgId+'\',\''+imgkey+'\','+id+');">删除</span>';       
+	            html +='</div>';	            
+	            var _parent = $$("#"+imgkey).parent()
+	            _parent.append(html); 
+	            imageArray.push({name:imgkey,path:src});
+	            //alert(imageArray.length);
+	            //alert(imageArray[index].path);
+	            index++;
+	            //显示隐藏DOM
+                if(_parent.next().hasClass("hide")){
+                	_parent.next().removeClass("hide");
+                }
+	    }  
+        //del
+    
+    
+        //选取图片的来源，拍照和相册  
+        function showActionSheet(conf){  
+        	//alert("ss")
+              var divid = conf.id;  
+              var actionbuttons=[{title:"拍照"},{title:"相册选取"}];  
+              var actionstyle={title:"选择照片",cancel:"取消",buttons:actionbuttons};  
+              plus.nativeUI.actionSheet(actionstyle, function(e){  
+                    if(e.index==1){  
+                        getImage(divid);  
+                    }else if(e.index==2){  
+                        galleryImg(divid);  
+                    }  
+              } );  
+        }
+        
+        //相册选取图片  
+        function galleryImg(divid) {  
+            plus.gallery.pick( function(p){  
+                //alert(p);//file:///storage/emulated/0/DCIM/Camera/IMG_20160704_112620.jpg  
+                plus.io.resolveLocalFileSystemURL(p, function(entry) {  
+                    //alert(entry.toLocalURL());//file:///storage/emulated/0/DCIM/Camera/IMG_20160704_112620.jpg  
+                    //alert(entry.name);//IMG_20160704_112620.jpg  
+                    compressImage(entry.toLocalURL(),entry.name,divid);  
+                }, function(e) {  
+                    plus.nativeUI.toast("读取拍照文件错误：" + e.message);  
+                });  
+            }, function ( e ) {  
+            }, {  
+                filename: "_doc/camera/",  
+                filter:"image"  
+            } );  
+        }
+        
+        // 拍照  
+        function getImage(divid) {  
+            var cmr = plus.camera.getCamera();  
+            cmr.captureImage(function(p) {  
+                //alert(p);//_doc/camera/1467602809090.jpg  
+                plus.io.resolveLocalFileSystemURL(p, function(entry) {  
+                    //alert(entry.toLocalURL());//file:///storage/emulated/0/Android/data/io.dcloud...../doc/camera/1467602809090.jpg  
+                    //alert(entry.name);//1467602809090.jpg  
+                    compressImage(entry.toLocalURL(),entry.name,divid);  
+                }, function(e) {  
+                    plus.nativeUI.toast("读取拍照文件错误：" + e.message);  
+                });  
+            }, function(e) {  
+            }, {  
+                filename: "_doc/camera/",  
+                index: 1  
+            });  
+        }  
+        //压缩图片  
+        function compressImage(url,filename,divid){  
+            var name="_doc/upload/"+divid+"-"+filename;//_doc/upload/F_ZDDZZ-1467602809090.jpg  
+            plus.zip.compressImage({  
+                    src:url,//src: (String 类型 )压缩转换原始图片的路径  
+                    dst:name,//压缩转换目标图片的路径  
+                    quality:20,//quality: (Number 类型 )压缩图片的质量.取值范围为1-100  
+                    overwrite:true//overwrite: (Boolean 类型 )覆盖生成新文件  
+                },  
+                function(event) {   
+                    //uploadf(event.target,divid);  
+                    var path = name;//压缩转换目标图片的路径  
+                    //event.target获取压缩转换后的图片url路  
+                    //filename图片名称  
+                    saveimage(event.target,divid,filename,path);  
+                },function(error) {  
+                    plus.nativeUI.toast("压缩图片失败，请稍候再试");  
+            });  
+        }  
+        //保存信息到本地  
+        /**  
+         *   
+         * @param {Object} url  图片的地址  
+         * @param {Object} divid  字段的名称  
+         * @param {Object} name   图片的名称  
+         */  
+        function saveimage(url,divid,name,path){  
+            //alert(url);//file:///storage/emulated/0/Android/data/io.dcloud...../doc/upload/F_ZDDZZ-1467602809090.jpg  
+            //alert(path);//_doc/upload/F_ZDDZZ-1467602809090.jpg  
+            var  state=0;  
+            var wt = plus.nativeUI.showWaiting();  
+          //  plus.storage.clear();   
+            name=name.substring(0,name.indexOf("."));//图片名称：1467602809090  
+            var id = document.getElementById("ckjl.id").value;  
+            var itemname=id+"img-"+divid;//429img-F_ZDDZ  
+            var itemvalue=plus.storage.getItem(itemname);  
+            if(itemvalue==null){  
+                itemvalue="{"+name+","+path+","+url+"}";//{IMG_20160704_112614,_doc/upload/F_ZDDZZ-IMG_20160704_112614.jpg,file:///storage/emulated/0/Android/data/io.dcloud...../doc/upload/F_ZDDZZ-1467602809090.jpg}  
+            }else{    
+                itemvalue=itemvalue+"{"+name+","+path+","+url+"}";  
+            }  
+            plus.storage.setItem(itemname, itemvalue);  
+              
+            var src = 'src="'+url+'"';  
+            //alert("itemvalue="+itemvalue);  
+            showImgDetail(name,divid,id,src);  
+            wt.close();  
+              
+        }  
+        //上传图片，实例中没有添加上传按钮  
+        function uploadimge() {  
+        	alert("上传数据");
+	        //plus.storage.clear();  
+	         var wa = plus.nativeUI.showWaiting();  
+	         var DkeyNames=[];  
+	         var id = document.getElementById("ckjl.id").value;   
+	         /*var length=id.toString().length;   
+	         var idnmae=id.toString();  
+	         var numKeys=plus.storage.getLength();  */
+	        
+	         var task = plus.uploader.createUpload('http://172.16.70.29:8080/financial/getFinalcialServiceInfo.do', {  
+                        method: "POST"  
+                    },  
+                    function(t, status) {  
+                        if (status == 200) {  
+                            console.log("上传成功");  
+                            $.ajax({  
+                                type: "post",  
+                                url: 'http://172.16.70.29:8080/financial/getFinalcialServiceInfo.do',  
+                                data: {  
+                                    driverId: $("#driverID").val(),  
+                                    //姓名、身份证号码、手机号、车牌号不可修改
+                                    drLecType: $("#drLecense").val(),   
+                                    drLecFirst: chageChar($("#dataLec0").val()),
+                                    drLecStart: chageChar($("#dataLec1").val()),
+                                    drLecEnd: chageChar($("#dataLec2").val()),
+                                    
+                                    bankCard: $("#bankCard").val(),
+                                    bank: $("#bank").val(),
+                                    
+                                    drLecense1: $("#drLecense1").val(),
+                                    drLecDate: chageChar($("#drLecDate").val())
+                                },  
+                                async: true,  
+                                dataType: "text",  
+                                success: function(data) {  
+                                    wa.close();  
+                                    //goList(data);  
+                                    location.href="review.html";
+                                      
+                                },  
+                                error: function() {  
+                                    wa.close();  
+                                    myAlert("网络错误，提交审批失败，请稍候再试");  
+                                }  
+                            });  
+                                                             
+                        } else {  
+                            wa.close();  
+                            console.log("上传失败");   
+                        }  
+                    }  
+                );  
+            task.addData("id",id);  
+            for(var i=0;i<imageArray.length;i++){
+				var _img=imageArray[i];
+				alert(_img.path);
+				task.addFile(_img.path,{key:_img.name});
+			}
+            /*for(var i=0; i<imgArray.length;i++){    
+                var itemkey=id+"img-"+imgArray[i];  
+                if(plus.storage.getItem(itemkey)!=null){  
+                    var itemvalue=plus.storage.getItem(itemkey).split("{");  
+                    for(var img=1;img<itemvalue.length;img++){  
+                        var imgname=itemvalue[img].substr(0,itemvalue[img].indexOf(","));  
+                        var imgurl=itemvalue[img].substring(itemvalue[img].indexOf(",")+1,itemvalue[img].lastIndexOf(","));  
+                        task.addFile(imgurl,{key:imgurl});  
+                    }  
+                }  
+            }*/  
+            task.start();  
+              
+        }
+        
+        
+})(hui, document, jQuery);
+    
+    //删除图片
+    //imgId:图片名称：IMG_20160704_112614  
+    //imgkey:字段，例如F_ZDDZZ  
+    //ID：站点编号ID，例如429  
+    function delImg(imgId,imgkey,id){  
+        var bts = ["是", "否"];  
+        plus.nativeUI.confirm("是否删除图片？", function(e) {  
+                var i = e.index;  
+                if (i == 0) {  
+                    var itemname=id+"img-"+imgkey;//429img-F_ZDDZZ  
+                    var itemvalue=plus.storage.getItem(itemname);  
+                    //{IMG_20160704_112614,_doc/upload/F_ZDDZZ-IMG_20160704_112614.jpg,file:///storage/emulated/0/Android/data/io.dcloud...../doc/upload/F_ZDDZZ-1467602809090.jpg}  
+                    if(itemvalue!=null){  
+                        var index=itemvalue.indexOf(imgId+",");  
+                        if(index==-1){//没有找到  
+                            delImgfromint(imgId,imgkey,id,index);  
+                        }else{   
+                            delImgFromLocal(itemname,itemvalue,imgId,imgkey,index); //修改，加了一个index参数  
+                        }  
+                          
+                    }else{  
+                        delImgfromint(imgId,imgkey,id);   
+                    }  
+                }  
+            },"查勘", bts);  
+        /*var isdel = confirm("是否删除图片？");  
+        if(isdel == false){  
+            return;  
+        }*/  
+          
+          
+    }  
+    function delImgFromLocal(itemname,itemvalue,imgId,imgkey,index){  
+                var wa = plus.nativeUI.showWaiting();  
+                var left=itemvalue.substr(0,index-1);  
+                var right=itemvalue.substring(index,itemvalue.length);  
+                var end=right.indexOf("}");  
+                right=right.substring(end+1,right.length);  
+                var newitem=left+right;  
+                plus.storage.setItem(itemname,newitem);   
+                //myAlert("删除成功");  
+                hui("#Img"+imgId+imgkey).remove();  //jquery
+                wa.close();  
+    }
+    
+    //附加验证函数用于单选多选等特殊检查项目
+	function huiFormCheckAttach(){	    
+	    //银行卡
+	    var bankno = $("#bankCard").val();
+	    //alert(bankno.length);
+	    if (bankno.length < 16 || bankno.length > 19) {
+			hui.toast('银行卡号长度必须在16到19之间');
+			return false;
+		}
+		var num = /^\d*$/;  //全数字
+		if (!num.exec(bankno)) {
+			hui.toast("银行卡号必须全为数字");
+			return false;
+		}
+		//开头6位
+		var strBin="10,18,30,35,37,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,58,60,62,65,68,69,84,87,88,94,95,98,99";    
+		if (strBin.indexOf(bankno.substring(0, 2))== -1) {
+			hui.toast("银行卡号开头6位不符合规范");
+			return false;
+		}
+		var lastNum=bankno.substr(bankno.length-1,1);//取出最后一位（与luhm进行比较）
+	
+		var first15Num=bankno.substr(0,bankno.length-1);//前15或18位
+		var newArr=new Array();
+		for(var i=first15Num.length-1;i>-1;i--){    //前15或18位倒序存进数组
+			newArr.push(first15Num.substr(i,1));
+		}
+		var arrJiShu=new Array();  //奇数位*2的积 <9
+		var arrJiShu2=new Array(); //奇数位*2的积 >9
+		
+		var arrOuShu=new Array();  //偶数位数组
+		for(var j=0;j<newArr.length;j++){
+			if((j+1)%2==1){//奇数位
+				if(parseInt(newArr[j])*2<9){
+				    arrJiShu.push(parseInt(newArr[j])*2);
+				}else{
+				    arrJiShu2.push(parseInt(newArr[j])*2);
+				}
+			}else{ //偶数位
+				arrOuShu.push(newArr[j]);
+			}
+		}  
+		
+		var jishu_child1=new Array();//奇数位*2 >9 的分割之后的数组个位数
+		var jishu_child2=new Array();//奇数位*2 >9 的分割之后的数组十位数
+		for(var h=0;h<arrJiShu2.length;h++){
+			jishu_child1.push(parseInt(arrJiShu2[h])%10);
+			jishu_child2.push(parseInt(arrJiShu2[h])/10);
+		}        
+		
+		var sumJiShu=0; //奇数位*2 < 9 的数组之和
+		var sumOuShu=0; //偶数位数组之和
+		var sumJiShuChild1=0; //奇数位*2 >9 的分割之后的数组个位数之和
+		var sumJiShuChild2=0; //奇数位*2 >9 的分割之后的数组十位数之和
+		var sumTotal=0;
+		for(var m=0;m<arrJiShu.length;m++){
+			sumJiShu=sumJiShu+parseInt(arrJiShu[m]);
+		}
+		
+		for(var n=0;n<arrOuShu.length;n++){
+			sumOuShu=sumOuShu+parseInt(arrOuShu[n]);
+		}
+		
+		for(var p=0;p<jishu_child1.length;p++){
+			sumJiShuChild1=sumJiShuChild1+parseInt(jishu_child1[p]);
+			sumJiShuChild2=sumJiShuChild2+parseInt(jishu_child2[p]);
+		}      
+		//计算总和
+		sumTotal=parseInt(sumJiShu)+parseInt(sumOuShu)+parseInt(sumJiShuChild1)+parseInt(sumJiShuChild2);
+		
+		//计算Luhm值
+		var k= parseInt(sumTotal)%10==0?10:parseInt(sumTotal)%10;        
+		var luhm= 10-k;
+		
+		/*if(lastNum==luhm){
+			return true;
+		}else{
+			hui.toast("银行卡号有误");
+			return false;
+		}*/
+		if(lastNum != luhm){
+			hui.toast("银行卡号有误");
+			return false;
+		}
+		
+		//图片验证
+		var idCardFace = hui("#dft_IMG1").attr("src");
+		var idCardBack = hui("#dft_IMG2").attr("src");
+		var drLecImg = hui("#dft_IMG3").attr("src");
+		var len1 = hui("#dft_IMG1").siblings(".image-item").length;
+		var len2 = hui("#dft_IMG2").siblings(".image-item").length;
+		var len3 = hui("#dft_IMG3").siblings(".image-item").length;
+
+		if(idCardFace == "source/image/upIMG1.jpg" && len1==0){
+			hui.toast("请上传身份证正面");
+			return false;
+		}
+		if(idCardBack == "source/image/upIMG2.jpg" && len2==0){
+			hui.toast("请上传身份证反面");
+			return false;
+		}
+		if(idCardBack == "source/upIMG3.jpg" && len3==0){
+			hui.toast("请上传机动车驾驶照");
+			return false;
+		}
+		
+	    return true;
+	}
+    
+    //替换时间 2018/12/22 to 2018-12-22
+    function chageChar(str){
+        	str.replace(/\//g,"-");
+    }
+    
+    //截取字符串
+    function cutStr(str ,start , end){
+	var len = str.length;
+	var num = parseInt(len)-parseInt(start)-parseInt(end);
+	var _char="";
+	for(var i=0 ; i< num ;i++){
+		_char += "*";
+	}
+	var str = str.substr(0,start)+_char+str.substr(-end)
+	return str;
+}
+</script>
+</body>
+</html>

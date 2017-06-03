@@ -1,0 +1,32 @@
+{
+	"index.html": {
+		"resources": [
+			"css/hui.css",
+			"css/fonts/iconfont.woff",
+			"css/style.css",
+			"js/hui.js",
+			"js/jquery-1.10.2.min.js",
+			"image/upIMG1.jpg",
+			"image/upIMG4.jpg",
+			"js/common.js",
+			"image/upIMG2.jpg",
+			"js/utitls.js",
+			"image/upIMG3.jpg",
+			"js/hui-picker.js",
+			"js/hui-form.js",
+			"data/loadInfo.as",
+			"hui/css/fonts/iconfont.woff",
+			"hui/css/hui.css",
+			"source/css/style.css",
+			"hui/js/hui.js",
+			"source/js/jquery-1.10.2.min.js",
+			"hui/js/hui-picker.js",
+			"hui/js/hui-form.js",
+			"source/image/upIMG1.jpg",
+			"source/image/upIMG4.jpg",
+			"source/image/upIMG2.jpg",
+			"source/image/upIMG3.jpg",
+			"source/data/loadInfo.as"
+		]
+	}
+}

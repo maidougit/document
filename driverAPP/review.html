@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="320"/>
+<title>金融</title>
+<link rel="stylesheet" type="text/css" href="hui/css/hui.css" />
+<link rel="stylesheet" type="text/css" href="source/css/style.css" />
+</head>
+<body>
+<header class="hui-header">
+	<div id="hui-back"></div>
+	<h1>物银通</h1>
+</header>
+<div class="hui-wrap">
+	<div class="tipsBar"><span class="hui-icons hui-icons-warn"></span>请补全/确认资料</div>
+	<div class="emilyCon marT10">
+		<div class="flexBox">    		
+			<div class="step finish hui-text-center">
+				<span>1</span>
+				<p class="marT10">填写资料</p>		
+			</div>
+			<div class="stepLine finish"></div>	
+			<div class="step hui-text-center">
+				<span>2</span>
+				<p class="marT10">后台审核</p>		
+			</div>
+			<div class="stepLine"></div>
+			<div class="step hui-text-center">
+				<span>3</span>
+				<p class="marT10">开通成功</p>
+			</div>
+		</div>
+	</div>
+		
+	<form id="myForm" class="formInfo">
+		<div class="titleH3">司机信息</div>
+		<div class="emilyCon" style="padding: 0 10px;">
+			<div class="hui-form-items flexBox just2" style="display: none;">
+	            <label>司机ID</label>
+	            <input type="hidden" class="hui-input hui-input-clear" id="driverID" value="" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>姓名</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drName" value="DDNJ" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>手机号码</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drPhone" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>身份证号码</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drID" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>驾照类型</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drLecense" placeholder="驾照类型" checkType="string" checkData="1," checkMsg="请选择驾照类型" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>初次领证日期</label>
+	            <input type="date" class="hui-input hui-input-clear" id="dataLec0" placeholder="初次领证日期" checkType="string" checkData="1," checkMsg="请输入初次领证日期" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>驾照有效期起</label>
+	            <input type="date" class="hui-input hui-input-clear" id="dataLec1" placeholder="驾照有效期起" checkType="string" checkData="1," checkMsg="请输入驾照起始日期" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>驾照有效期止</label>
+	            <input type="date" class="hui-input hui-input-clear" id="dataLec2" placeholder="驾照有效期止" checkType="string" checkData="1," checkMsg="请输入驾照截止日期" />
+	        </div>
+	    </div>
+	    
+	    <div class="titleH3">银行卡信息</div>
+	    <div class="emilyCon" style="padding: 0 10px;">  
+	    	<div class="hui-form-items flexBox just2">
+	            <label>银行卡号</label>
+	            <input type="text" class="hui-input hui-input-clear" id="bankCard" placeholder="银行卡号" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>开户行</label>
+	            <input type="text" class="hui-input hui-input-clear" id="bank" placeholder="开户行" checkType="reg" checkData="^[\u4e00-\u9fa5]{2,15}$" checkMsg="开户行为中文" />
+	        </div>
+	    </div>
+	    
+	    <div class="titleH3">车辆信息</div>
+	    <div class="emilyCon" style="padding: 0 10px;"> 
+	    	<div class="hui-form-items flexBox just2">
+	            <label>车牌号</label>
+	            <input type="text" class="hui-input hui-input-clear" id="carID" readonly="readonly"/>
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>行驶证编号</label>
+	            <input type="text" class="hui-input hui-input-clear" id="drLecense1" placeholder="行驶证编号"  checkType="reg" checkData="^\d{10,14}$" checkMsg="行驶证编号为10-14位数字" />
+	        </div>
+	        <div class="hui-form-items flexBox just2">
+	            <label>行驶证有效期</label>
+	            <input type="date" class="hui-input hui-input-clear" id="drLecDate" placeholder="行驶证有效期"  checkType="string" checkData="1," checkMsg="请输入行驶证有效期" />
+	        </div>
+	    </div>   
+	        
+	    <div class="titleH3">上传证件</div>
+	    <div class="emilyCon" style="padding: 0 10px;"> 	
+	        <!--<input type="file" name="pic" id="pic" accept="image/*" class="upload-input" />-->
+	        <input type="hidden" id="ckjl.id" name="ckjl.id" value="429">
+	        <div class="imgConBox" id="upload1">
+	        	<img src="source/image/upIMG1.jpg" class="dftIMG" id="dft_IMG1">
+	        </div>
+	        <div class="imgConBox" id="upload2">
+	        	<img src="source/image/upIMG2.jpg" class="dftIMG" id="dft_IMG2">
+	        </div>
+	        <div class="imgConBox" id="upload3">
+	        	<img src="source/image/upIMG3.jpg" class="dftIMG" id="dft_IMG3">
+	        </div>
+	        <div class="imgConBox" id="upload4">
+	        	<img src="source/image/upIMG4.jpg" class="dftIMG" id="dft_IMG4">
+	        </div>
+	        <!--隐藏-->
+	        <div class="imgConBox hide" id="upload5">
+	        	<img src="source/image/upIMG4.jpg" class="dftIMG" id="dft_IMG5">
+	        </div>
+	        <div class="imgConBox hide" id="upload6">
+	        	<img src="source/image/upIMG4.jpg" class="dftIMG" id="dft_IMG6">
+	        </div>
+	        
+	    </div>
+	</form>
+	
+</div>
+<script type="text/javascript" src="hui/js/hui.js" charset="utf-8"></script>
+<!--<script type="text/javascript" src="source/js/jquery-1.10.2.min.js" charset="utf-8"></script>-->
+<script type="text/javascript" src="hui/js/hui-picker.js" charset="utf-8"></script>
+<script type="text/javascript" src="hui/js/hui-form.js" charset="utf-8"></script>
+<!--<script type="text/javascript" src="source/js/common.js" charset="utf-8"></script>  
+<script type="text/javascript" src="source/js/utitls.js" charset="utf-8"></script> -->
+<script type="text/javascript">
+var driverID = "12345";
+hui.ajax({
+    url : 'source/data/loadInfo1.as',
+    backType:"JSON",
+    data:{
+    	//driverId: "12345"
+    },
+    success : function(data){
+    	//hui.upToast(msg);
+    	if(data.success){
+    		var data=data.result[0];
+    		//alert(data.drName)
+    		hui("#drName").val(data.drName);
+    		hui("#drPhone").val(cutStr(data.drPhone ,3 ,2));
+    		hui("#drID").val(cutStr(data.drID ,4 ,2));
+    		hui("#drLecense").val(data.drLecType);
+    		hui("#dataLec0").val(data.drLecFirst);
+
+    		hui("#dataLec1").val(data.drLecStart);
+    		hui("#dataLec2").val(data.drLecEnd);
+    		
+    		hui("#bankCard").val(cutStr(data.bankCard ,4 ,4));
+    		hui("#bank").val(data.bank);
+    		
+    		hui("#carID").val(data.carID);
+    		hui("#drLecense1").val(data.drLecense1);
+    		hui("#drLecDate").val(data.drLecDate);
+    		
+            if(data.idCardFace != ""){
+            	hui("#dft_IMG1").attr("src",data.idCardFace);
+            }
+            if(data.idCardBack != ""){
+            	hui("#dft_IMG2").attr("src",data.idCardBack);
+            }
+            if(data.drLecImg != ""){
+            	hui("#dft_IMG3").attr("src",data.drLecImg);
+            }
+            if(data.certificate1 != ""){
+            	hui("#dft_IMG4").attr("src",data.certificate1);
+            }
+            if(data.certificate2 != ""){
+            	hui("#upload5").removeClass("hide");
+            	hui("#dft_IMG5").attr("src",data.certificate2);
+            }
+            if(data.certificate3 != ""){
+            	hui("#upload6").removeClass("hide");
+            	hui("#dft_IMG6").attr("src",data.certificate3);
+            }
+
+    	}
+    },
+    error : function(e){
+        console.log(JSON.stringify(e));
+        hui.iconToast('读取消息失败', 'warn');
+    }
+});
+
+function chageChar(str){
+    	str.replace(/\//g,"-");
+}
+
+function cutStr(str ,start , end){
+	var len = str.length;
+	var num = parseInt(len)-parseInt(start)-parseInt(end);
+	var _char="";
+	for(var i=0 ; i< num ;i++){
+		_char += "*";
+	}
+	var str = str.substr(0,start)+_char+str.substr(-end)
+	return str;
+}
+</script>
+</body>
+</html>

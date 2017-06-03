@@ -1,0 +1,48 @@
+configuration文件夹中有如下配置文件
+	代码规范文件EclipseStyle.xml
+	代码格式化配置文件CleanUp.xml
+	checkstyle配置文件CheckStyle.xml
+
+导入指引:
+(1)导入 EclipseStyle.xml：
+	依次点击菜单：window->Preferences->Java->Code Style->Formatter->import
+(2)导入 CleanUp.xml：
+	依次点击菜单：window->Preferences->Java->Code Style->Clean Up->import
+	General->Editors->Text Editors->show whitespace characters->checked
+(3)导入 CheckStyle.xml：
+	a.依次点击菜单：window->Preferences->CheckStyle->New->External Configuration File->Browse
+	b.Advianced options 栏勾选 Protect CheckStyle configuration file
+	c.选中刚才导入的CheckStyle.xml，点击按钮“Set as Default”
+
+XML文件的缩进等的设置：
+	依次点击菜单：window->Preferences->XML>XML Files->Editor
+	a.勾选 Insert whitespace before closing empty end-tags
+	b.选中 Indent using spaces
+	c.设置 Indentation size: 4
+
+Space的通用设置：
+	依次点击菜单：window->Preferences->General>Editors->Text Editors
+	a.设置 Displayed tab size 4
+	b.勾选 Insert spaces for tab
+
+Save Action设置:
+	依次点击菜单：window->Preferences->Java>Editors->Save Action
+	a.勾选
+		1.Perform the selected actions on save
+		2.Organize imports
+		3.Additional actions
+	b.点击 Configure 进入
+		1.Code Organizing
+			勾选 Remove trailing whitespace
+			     All lines
+			勾选 Correct indentation
+		2.Code Style
+			勾选 Use blocks in if/while/for/do statements 
+			     always
+			勾选 Use modifier final where possible
+			     Private fields
+		3.Missing Code
+			全部勾选
+		4.Unnecessary Code
+			勾选 Remove unused imports
+			最后两个全部勾选
